@@ -419,7 +419,7 @@ class UDPHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
         #socket.setdefaulttimeout(120)
-        if not self.request[0][0] == 128:
+        if not self.request[0][0] == 128 and not self.request[0][0] == 156:
             data = self.request[0].decode("utf-8")
             self.data = data.split("\r\n")
             self.socket = self.request[1]
